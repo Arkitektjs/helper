@@ -1,0 +1,45 @@
+{
+  "name": "@arkitekt/helper",
+  "version": "1.0.0",
+  "description": "JavaScript's functional programming helper library",
+  "main": "index.js",
+  "scripts": {
+    "eslint": "eslint ./ --ext .js --config .eslintrc.js",
+    "eslint:fix": "eslint ./ --ext .js --config .eslintrc.js --fix",
+    "test": "jest ./tests --passWithNoTests",
+    "test:coverage": "jest --collectCoverage --passWithNoTests",
+    "test:watch": "jest --passWithNoTests --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arkitektjs/Helper.git"
+  },
+  "keywords": [
+    "arkitekt",
+    "helper",
+    "util",
+    "client",
+    "browser",
+    "client",
+    "functional"
+  ],
+  "author": "Franck DIOMANDE <fkdiomande@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arkitektjs/Helper/issues"
+  },
+  "homepage": "https://github.com/Arkitektjs/Helper#readme",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-align-assignments": "^1.1.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-sort-requires": "^2.1.0",
+    "jest": "^25.2.7"
+  }
+}
