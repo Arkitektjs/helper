@@ -1,5 +1,5 @@
 {
-  "name": "@arkitekt/helper",
+  "name": "@arkitektjs/helper",
   "version": "1.0.0",
   "description": "JavaScript's functional programming helper library",
   "main": "index.js",
