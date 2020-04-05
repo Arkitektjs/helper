@@ -4,8 +4,8 @@
   "description": "JavaScript's functional programming helper library",
   "main": "index.js",
   "scripts": {
-    "eslint": "eslint ./ --ext .js --config .eslintrc.js",
-    "eslint:fix": "eslint ./ --ext .js --config .eslintrc.js --fix",
+    "style": "eslint ./ --ext .js --config .eslintrc.js",
+    "style:fix": "eslint ./ --ext .js --config .eslintrc.js --fix",
     "test": "jest ./tests --passWithNoTests",
     "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "test:watch": "jest --passWithNoTests --watchAll"
@@ -17,8 +17,8 @@
   "keywords": [
     "arkitekt",
     "helper",
-    "util",
-    "client",
+    "utilities",
+    "server",
     "browser",
     "client",
     "functional"

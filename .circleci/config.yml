@@ -63,7 +63,7 @@ jobs:
           at: ~/tmp/arkitektjs/helper
       - run:
           name: Running code styles
-          command: npm run eslint
+          command: npm run style
   deploy:
     executor: node-executor
     steps:
