@@ -6,25 +6,26 @@ executors:
       - image: circleci/node:12
     working_directory: ~/tmp/arkitektjs/helper
 
-
 workflows:
   version: 2
   build and test:
     jobs:
-      - build project
+      - build project:
+          context: Arkitektjs
       - code styles:
+          context: Arkitektjs
           requires:
             - build project
       - unit tests:
+          context: Arkitektjs
           requires:
             - build project
       - deploy:
+          context: Arkitektjs
           requires:
             - code styles
             - unit tests
           filters:
-            branches:
-              ignore: /.*/
             tags:
               only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
 
@@ -53,11 +54,8 @@ jobs:
       - attach_workspace:
           at: ~/tmp/arkitektjs/helper
       - run:
-          name: Show work directory
-          command: pwd
-      - run:
           name: Running tests
-          command: npm run test
+          command: npm run test:coveralls
   code styles:
     executor: node-executor
     steps:
@@ -78,5 +76,6 @@ jobs:
               echo "//registry.npmjs.org/:_authToken=$NPM_PUBLISH_TOKEN" > ~/tmp/arkitektjs/helper/.npmrc
               PACKAGE_VERSION=$(node -p -e "require('./package.json').version")
               npm pack
+              npm publish arkitektjs-helper-$PACKAGE_VERSION.tgz --access public
             fi
 

@@ -5,7 +5,7 @@
  * @return {String} Returns a random hexadecimal color code.
  */
 module.exports = () => `#${
-  ('0123456789ABCDEF'.split('').map(
+  ('0123456789abcdef'.split('').map(
     (v, i, a) => (5 < i ? null : a[Math.floor(Math.random() * 16)]),
   ).join('')
   ).toLowerCase()

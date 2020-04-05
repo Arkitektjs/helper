@@ -7,7 +7,7 @@
     "eslint": "eslint ./ --ext .js --config .eslintrc.js",
     "eslint:fix": "eslint ./ --ext .js --config .eslintrc.js --fix",
     "test": "jest ./tests --passWithNoTests",
-    "test:coverage": "jest --collectCoverage --passWithNoTests",
+    "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "test:watch": "jest --passWithNoTests --watchAll"
   },
   "repository": {
@@ -34,7 +34,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@commitlint/cli": "^8.3.5",
+    "coveralls": "^3.0.11",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-align-assignments": "^1.1.2",

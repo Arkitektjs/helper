@@ -6,3 +6,4 @@ tests/
 .eslintrc.js
 jest.config.js
 package-lock.json
+.circleci/
