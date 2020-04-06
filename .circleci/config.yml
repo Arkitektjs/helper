@@ -26,8 +26,8 @@ workflows:
             - code styles
             - unit tests
           filters:
-            tags:
-              only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
+            branches:
+              only: master
 
 jobs:
   build project:
@@ -72,11 +72,7 @@ jobs:
       - run:
           name: Authenticate With Registry & Publish Package
           command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              echo "//registry.npmjs.org/:_authToken=$NPM_PUBLISH_TOKEN" > ~/tmp/arkitektjs/helper/.npmrc
-              PACKAGE_VERSION=$(node -p -e "require('./package.json').version")
-              npm pack
-              npm publish arkitektjs-helper-$PACKAGE_VERSION.tgz --access public
-            fi
-            echo "done"
-
+            echo "//registry.npmjs.org/:_authToken=$NPM_PUBLISH_TOKEN" > ~/tmp/arkitektjs/helper/.npmrc
+            PACKAGE_VERSION=$(node -p -e "require('./package.json').version")
+            npm pack
+            npm publish arkitektjs-helper-$PACKAGE_VERSION.tgz --access public
