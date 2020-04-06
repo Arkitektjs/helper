@@ -1,7 +1,7 @@
 const convertToArrayHelper = require('../src/convertToArrayHelper');
 
 describe('convertToArrayHelper', () => {
-  it('should convert an object to array', () => {
+  it('should convert from object', () => {
     const car = {
       color: 'white',
       model: '500',
@@ -10,5 +10,11 @@ describe('convertToArrayHelper', () => {
 
     const result = convertToArrayHelper(car);
     expect(result).toEqual(['color', 'model', 'type']);
+  });
+
+  it('should convert from string', () => {
+    const str = 'hello';
+
+    expect(convertToArrayHelper(str)).toEqual(['h', 'e', 'l', 'l', 'o']);
   });
 });

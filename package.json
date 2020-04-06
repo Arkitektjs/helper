@@ -8,6 +8,7 @@
     "style:fix": "eslint ./ --ext .js --config .eslintrc.js --fix",
     "test": "jest ./tests --passWithNoTests",
     "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "test:coverage": "jest --collectCoverage --passWithNoTests",
     "test:watch": "jest --passWithNoTests --watchAll"
   },
   "repository": {
