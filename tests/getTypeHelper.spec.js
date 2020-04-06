@@ -5,10 +5,10 @@ const isEmptyHelper       = require('../src/isEmptyHelper');
 const isFormDataHelper    = require('../src/isFormDataHelper');
 const isFunctionHelper    = require('../src/isFunctionHelper');
 const isHtmlElementHelper = require('../src/isHtmlElementHelper');
-const isStringHelper      = require('../src/isStringHelper');
 const isNumberHelper      = require('../src/isNumberHelper');
 const isObjectHelper      = require('../src/isObjectHelper');
 const isRegExpHelper      = require('../src/isRegExpHelper');
+const isStringHelper      = require('../src/isStringHelper');
 
 describe('getTypeHelper', () => {
   it('Type must be a string', () => {
