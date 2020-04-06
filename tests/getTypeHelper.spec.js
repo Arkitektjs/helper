@@ -3,44 +3,59 @@ const isArrayHelper       = require('../src/isArrayHelper');
 const isCallbackHelper    = require('../src/isCallbackHelper');
 const isEmptyHelper       = require('../src/isEmptyHelper');
 const isFormDataHelper    = require('../src/isFormDataHelper');
+const isFunctionHelper    = require('../src/isFunctionHelper');
 const isHtmlElementHelper = require('../src/isHtmlElementHelper');
+const isStringHelper      = require('../src/isStringHelper');
 const isNumberHelper      = require('../src/isNumberHelper');
 const isObjectHelper      = require('../src/isObjectHelper');
+const isRegExpHelper      = require('../src/isRegExpHelper');
 
-describe('Unit test for getTypeHelper', () => {
-  test('Type must be a string', () => {
+describe('getTypeHelper', () => {
+  it('Type must be a string', () => {
     expect(getTypeHelper('Hello World')).toBe('string');
   });
 
-  test('Type must be a null', () => {
+  it('should return string type', () => {
+    expect(isStringHelper('my string')).toBeTruthy();
+  });
+
+  it('should return null', () => {
     expect(getTypeHelper(null)).toBeNull();
   });
 
-  test('Type must be a callback', () => {
+  it('should return function type', () => {
+    expect(isFunctionHelper(() => {})).toBeTruthy();
+  });
+
+  it('should return callback type', () => {
     expect(isCallbackHelper(() => {})).toBeTruthy();
   });
 
-  test('Type must be a FormData', () => {
+  it('should return FormData type', () => {
     expect(isFormDataHelper(new FormData())).toBeTruthy();
   });
 
-  test('Type must be a Number', () => {
+  it('should return number type', () => {
     expect(isNumberHelper(123)).toBeTruthy();
   });
 
-  test('Type must be an object', () => {
+  it('should return object type', () => {
     expect(isObjectHelper({})).toBeTruthy();
   });
 
-  test('Type must be an array', () => {
+  it('should return array type', () => {
     expect(isArrayHelper([])).toBeTruthy();
   });
 
-  test('Type must be an html element', () => {
+  it('should return regExp type', () => {
+    expect(isRegExpHelper(/.*/)).toBeTruthy();
+  });
+
+  it('should return HtmlElement type', () => {
     expect(isHtmlElementHelper(document.createElement('div'))).toBeTruthy();
   });
 
-  test('Checks if an Object is empty', () => {
+  it('should check if an Object is empty', () => {
     const result = isEmptyHelper({}) && isEmptyHelper(null)
       && isEmptyHelper([]) && isEmptyHelper(0) && isEmptyHelper(NaN)
       && isEmptyHelper('') && isEmptyHelper(false);

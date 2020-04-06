@@ -19,16 +19,16 @@ const values = {
 
 const result = mergeObjectHelper(defaultValues, values);
 
-describe('Unit test for mergeObjectHelper', () => {
-  test('Value of key1 must be value1Change', () => {
+describe('mergeObjectHelper', () => {
+  it('should be value1change for key1', () => {
     expect(result.key1).toStrictEqual('value1Change');
   });
 
-  test('key2-value2 must exist', () => {
+  it('should be exist', () => {
     expect(result.key2.key2).toStrictEqual('key2-value2');
   });
 
-  test('Value of key3 must be an object', () => {
+  it('should be an object', () => {
     expect(result.key3).toStrictEqual({});
   });
 });

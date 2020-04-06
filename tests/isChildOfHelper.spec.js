@@ -1,7 +1,7 @@
 const isChildOfHelper = require('../src/isChildOfHelper');
 
-describe('Unit test for isChildOfHelper', () => {
-  test('Element must be a child of another', () => {
+describe('isChildOfHelper', () => {
+  it('should be a child of another', () => {
     const parent = document.createElement('div');
     const child  = document.createElement('p');
 
@@ -11,7 +11,7 @@ describe('Unit test for isChildOfHelper', () => {
     expect(result).toBeTruthy();
   });
 
-  test('Element must not be a child of another', () => {
+  it('should not be a child of another', () => {
     const parent     = document.createElement('div');
     const child      = document.createElement('p');
     const falseChild = document.createElement('p');
