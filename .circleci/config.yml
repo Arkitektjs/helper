@@ -56,6 +56,9 @@ jobs:
       - run:
           name: Running tests
           command: npm run test:coveralls
+      - store_artifacts:
+          path: coverage
+
   code styles:
     executor: node-executor
     steps:

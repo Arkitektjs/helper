@@ -7,7 +7,9 @@
  * @return {boolean} Returns true if everything went well and false otherwise.
  */
 module.exports = (element, afterElement) => {
-  const parent = afterElement.parentNode;
+  let parent;
+  try { parent = afterElement.parentNode; } catch (e) { parent = false; }
+
   if (!parent) {
     return false;
   }

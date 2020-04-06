@@ -12,4 +12,8 @@ describe('getByKeyHelper', () => {
     const result = getByKeyHelper(car, 'countries.french');
     expect(result).toEqual('peugeot');
   });
+
+  it('should return null', () => {
+    expect(getByKeyHelper(car, 'countries.type')).toBeUndefined();
+  });
 });
