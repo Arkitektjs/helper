@@ -1,10 +1,10 @@
 const upperFirstHelper = require('../src/upperFirstHelper');
 
-describe('Unit test for upperFirstHelper', () => {
-  test('First letter must be uppercase', () => {
-    const phrase = 'il était une fois';
+describe('upperFirstHelper', () => {
+  it('should be uppercase', () => {
+    const phrase = 'once upon a time';
     const result = upperFirstHelper(phrase);
 
-    expect(result).toBe('Il était une fois');
+    expect(result).toBe('Once upon a time');
   });
 });
