@@ -78,4 +78,5 @@ jobs:
               npm pack
               npm publish arkitektjs-helper-$PACKAGE_VERSION.tgz --access public
             fi
+            echo "done"
 

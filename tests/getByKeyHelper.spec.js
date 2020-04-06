@@ -7,8 +7,8 @@ const car = {
   type: 'Fiat',
 };
 
-describe('Unit test for getByKeyHelper', () => {
-  test(' Get array object value by key.', () => {
+describe('getByKeyHelper', () => {
+  it('should get value by its key', () => {
     const result = getByKeyHelper(car, 'countries.french');
     expect(result).toEqual('peugeot');
   });
