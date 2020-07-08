@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-**Arkitekt Helper version(s) affected**: x.y.z
+**DeltaRM Helper version(s) affected**: x.y.z
 
 **Description**  
 <!-- A clear and concise description of the problem. -->

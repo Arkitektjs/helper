@@ -1,4 +1,4 @@
-# Arkitekt Helper Security Policy
+# DeltaRM Helper Security Policy
 
 ## Supported Versions for security update
 

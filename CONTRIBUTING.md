@@ -1,1 +1,1 @@
-# Arkitekt Helper Contributing Guidelines
+# DeltaRM Helper Contributing Guidelines

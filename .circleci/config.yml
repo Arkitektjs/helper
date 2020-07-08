@@ -4,24 +4,24 @@ executors:
   node-executor:
     docker:
       - image: circleci/node:12
-    working_directory: ~/tmp/arkitektjs/helper
+    working_directory: ~/tmp/deltarm/helper
 
 workflows:
   version: 2
   build and test:
     jobs:
       - build project:
-          context: Arkitektjs
+          context: DeltaRM
       - code styles:
-          context: Arkitektjs
+          context: DeltaRM
           requires:
             - build project
       - unit tests:
-          context: Arkitektjs
+          context: DeltaRM
           requires:
             - build project
       - deploy:
-          context: Arkitektjs
+          context: DeltaRM
           requires:
             - code styles
             - unit tests
@@ -36,23 +36,23 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - arkitektjs-helper-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
-            - arkitektjs-helper-
+            - deltarm-helper-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
+            - deltarm-helper-
       - run:
           name: Install Dependencies
           command: npm install
       - persist_to_workspace:
-          root: ~/tmp/arkitektjs/helper
+          root: ~/tmp/deltarm/helper
           paths: .
       - save_cache:
-          key: arkitektjs-helper-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
+          key: deltarm-helper-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
           paths:
             - node_modules
   unit tests:
     executor: node-executor
     steps:
       - attach_workspace:
-          at: ~/tmp/arkitektjs/helper
+          at: ~/tmp/deltarm/helper
       - run:
           name: Running tests
           command: npm run test:coveralls
@@ -63,7 +63,7 @@ jobs:
     executor: node-executor
     steps:
       - attach_workspace:
-          at: ~/tmp/arkitektjs/helper
+          at: ~/tmp/deltarm/helper
       - run:
           name: Running code styles
           command: npm run style
@@ -71,11 +71,11 @@ jobs:
     executor: node-executor
     steps:
       - attach_workspace:
-          at: ~/tmp/arkitektjs/helper
+          at: ~/tmp/deltarm/helper
       - run:
           name: Authenticate With Registry & Publish Package
           command: |
-            echo "//registry.npmjs.org/:_authToken=$NPM_PUBLISH_TOKEN" > ~/tmp/arkitektjs/helper/.npmrc
+            echo "//registry.npmjs.org/:_authToken=$NPM_PUBLISH_TOKEN" > ~/tmp/deltarm/helper/.npmrc
             PACKAGE_VERSION=$(node -p -e "require('./package.json').version")
             npm pack
-            npm publish arkitektjs-helper-$PACKAGE_VERSION.tgz --access public
+            npm publish deltarm-helper-$PACKAGE_VERSION.tgz --access public

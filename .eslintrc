@@ -1,0 +1,34 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "env": {
+    "jest": true
+  },
+  "extends": [
+    "airbnb-base",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "no-shadow": ["off"],
+    "no-undef": ["off"],
+    "no-return-await": ["off"],
+    "class-methods-use-this": ["off"],
+    "max-len": ["error", { "code": 120 }],
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "import/extensions": ["off"],
+    "import/no-unresolved": ["off"],
+    "import/prefer-default-export": ["off"],
+    "no-underscore-dangle": ["off"],
+    "newline-before-return": ["error"],
+    "yoda": ["error", "always"],
+    "@typescript-eslint/no-unused-vars": ["error"],
+    "@typescript-eslint/no-inferrable-types": ["off"],
+    "@typescript-eslint/explicit-member-accessibility": ["error", { "overrides": { "constructors": "no-public" } }]
+  }
+}

@@ -3,7 +3,6 @@ node_modules/
 mocks/
 tests/
 .eslintignore
-.eslintrc.js
 jest.config.js
 package-lock.json
 .circleci/

@@ -1,46 +1,50 @@
 {
-  "name": "@arkitektjs/helper",
+  "name": "@deltarm/helper",
   "version": "1.0.0",
   "description": "JavaScript's functional programming helper library",
   "main": "index.js",
   "scripts": {
-    "style": "eslint ./ --ext .js --config .eslintrc.js",
-    "style:fix": "eslint ./ --ext .js --config .eslintrc.js --fix",
-    "test": "jest ./tests --passWithNoTests",
-    "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "dev": "tsc-watch --onSuccess \"node ./dist/index.js\"",
+    "build": "tsc",
+    "docs:json": "typedoc",
+    "lint": "eslint \"{src,tests}/**/*.ts\" --config .eslintrc",
+    "lint:fix": "eslint \"{src,tests}/**/*.ts\" --config .eslintrc --fix",
+    "test": "jest --passWithNoTests",
+    "test:coveralls": "jest --coverage --passWithNoTests --coverageReporters=text-lcov | coveralls",
     "test:coverage": "jest --collectCoverage --passWithNoTests",
     "test:watch": "jest --passWithNoTests --watchAll"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Arkitektjs/Helper.git"
+    "url": "git+https://github.com/DeltaRM/Helper.git"
   },
   "keywords": [
-    "arkitekt",
     "helper",
     "utilities",
     "server",
     "browser",
-    "client",
     "functional"
   ],
   "author": "Franck DIOMANDE <fkdiomande@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Arkitektjs/Helper/issues"
+    "url": "https://github.com/DeltaRM/Helper/issues"
   },
-  "homepage": "https://github.com/Arkitektjs/Helper#readme",
-  "directories": {
-    "test": "tests"
-  },
+  "homepage": "https://github.com/DeltaRM/Helper#readme",
   "dependencies": {},
   "devDependencies": {
-    "coveralls": "^3.0.11",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-plugin-align-assignments": "^1.1.2",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-sort-requires": "^2.1.0",
-    "jest": "^25.2.7"
+    "@types/eslint": "^7.2.0",
+    "@types/jest": "^26.0.4",
+    "@types/node": "^14.0.19",
+    "@typescript-eslint/eslint-plugin": "^3.6.0",
+    "@typescript-eslint/parser": "^3.6.0",
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "jest": "^26.1.0",
+    "ts-jest": "^26.1.1",
+    "tsc-watch": "^4.2.9",
+    "typedoc": "^0.17.8",
+    "typescript": "^3.9.6"
   }
 }

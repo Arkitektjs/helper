@@ -1,10 +1,10 @@
 <div align="center">
 
-<h1 align="center">Arkitekt Helper</h1>
+<h1 align="center">DeltaRM Helper</h1>
 
-[![Arkitektjs](https://circleci.com/gh/Arkitektjs/helper.svg?style=shield)](https://github.com/Arkitektjs/helper)
-[![Coverage Status](https://coveralls.io/repos/github/Arkitektjs/Helper/badge.svg?branch=master)](https://coveralls.io/github/Arkitektjs/Helper?branch=master)
-[![npm version](https://badge.fury.io/js/%40arkitektjs%2Fhelper.svg)](https://badge.fury.io/js/%40arkitektjs%2Fhelper)
+[![DeltaRM](https://circleci.com/gh/DeltaRM/helper.svg?style=shield)](https://github.com/DeltaRM/helper)
+[![Coverage Status](https://coveralls.io/repos/github/DeltaRM/Helper/badge.svg?branch=master)](https://coveralls.io/github/DeltaRM/Helper?branch=master)
+[![npm version](https://badge.fury.io/js/%40deltarm%2Fhelper.svg)](https://badge.fury.io/js/%40deltarm%2Fhelper)
 </div>
 
 Useful functions to increase your productivity 
@@ -14,13 +14,13 @@ Useful functions to increase your productivity
 #### Installation
 
 ```
-npm install @arkitektjs/helper
+npm install @deltarm/helper
 ```
 
 #### Usage
 
 ```
-const get = require('@arkitektjs/helper');
+const get = require('@deltarm/helper');
 
 const isString = get('isString');
 console.log(isString('my string'));
@@ -29,7 +29,7 @@ const randomColor = get('randomColor');
 console.log(randomColor());
 
 
-const toSlug = require('@arkitektjs/helper/src/toSlugHelper');
+const toSlug = require('@deltarm/helper/src/toSlugHelper');
 console.log(toSlug('string to slug'));
 ```
 
@@ -47,4 +47,4 @@ Read more about our [Security Policy](SECURITY.md).
 
 ## License
 
-Arkitekt Helper is [MIT Licensed](LICENSE).
+DeltaRM Helper is [MIT Licensed](LICENSE).
